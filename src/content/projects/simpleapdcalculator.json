@@ -1,0 +1,8 @@
+{
+    "title": "Simple APD Calculator",
+    "description": "Application web permettant le calcul de pertes de charges aérauliques à partir de 2 valeurs.",
+    "image": "./simpleapdcalculator.png",
+    "alt": "Une fenêtre d'application web",
+    "url": "#",
+    "tags": ["Javascript", "Html", "Css"]
+}
