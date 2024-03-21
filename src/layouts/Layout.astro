@@ -1,4 +1,6 @@
 ---
+import Navbar from '../components/Navbar.astro';
+
 interface Props {
 	title: string;
 }
@@ -23,6 +25,6 @@ const { title = 'Ludovic Le Bris | Développeur web' } = Astro.props as LayoutPr
 	<body>
 		<Navbar />
 		<slot />
-		<Footer />
+		<!-- <Footer /> -->
 	</body>
 </html>
