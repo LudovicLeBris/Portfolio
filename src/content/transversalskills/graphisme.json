@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Illustration",
+        "logo": "./illustrator.png",
+        "alt": "Logo Illustrator"
+    },
+    {
+        "name": "Edition d'image",
+        "logo": "./photoshop.png",
+        "alt": "Logo Photoshop"
+    },
+    {
+        "name": "Mise en page",
+        "logo": "./indesign.png",
+        "alt": "Logo Indesign"
+    }
+]

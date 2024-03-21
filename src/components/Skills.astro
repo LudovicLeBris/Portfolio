@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const hardSkills = await getCollection('hardskills')
+const softSkills = await getCollection('softskills')
+const transversalSkills = await getCollection('transversalskills')
+---
+
+<section>
+    <div>
+        <h2>Compt&eacute;tences techniques</h2>
+        <div>
+            {
+                hardSkills.map((hardSkill) => (
+                    <>
+                    <div>
+                        <Image src={hardSkill.data.logo}` alt={hardSkill.data.alt} width={64}/>
+                        <p>{hardSkill.data.name}</p>
+                    </div>
+                    </>
+                ))
+            }
+        </div>
+    </div>
+    <div>
+        <h2>Qualit&eacute;s personnelles</h2>
+        <div>
+            <ul>
+                {
+                    softSkills[0].data.map((softSkill) => 
+                    (
+                        <>
+                            <li>{softSkill}</li>
+                        </>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>Comp&eacute;tences transverses</h2>
+        <div>
+            {
+                transversalSkills.map((transversalSkillFamily) => (
+                    <>
+                    <div>
+                        <h3>{transversalSkillFamily.id}</h3>
+                        <div>
+                            {
+                                transversalSkillFamily.data.map((transversalSkill) => (
+                                    <div>
+                                        <Image src={transversalSkill.logo} alt={transversalSkill.alt} width={64}/>
+                                        <p>{transversalSkill.name}</p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                    </>
+                ))
+            }
+        </div>
+    </div>
+</section>
