@@ -1,0 +1,20 @@
+---
+import Image from "astro/components/Image.astro"
+import Portrait from "../assets/images/20231007_131108.jpg";
+---
+
+<section id="hero">
+    <div>
+        <h1>Ludovic Le Bris.</h1>
+        <h2>D&eacute;veloppeur web</h2>
+        <p>Pr&egrave;t &agrave; relever de nouveaux défis - D&eacute;veloppez votre activit&eacute; web avec un d&eacute;veloppeur passion&eacute;.</p>
+    </div>
+    <div>
+        <a href="#contact">
+            Prenons contact
+        </a>
+    </div>
+    <div>
+        <Image src={Portrait} alt={'Portait de moi'} width={64}/>
+    </div>
+</section>
