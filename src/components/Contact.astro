@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import GmailLogo from '@assets/logos/gmail.png'
+import LinkedinLogo from '@assets/logos/linkedin.png'
+import GithubLogo from '@assets/logos/github.png'
+---
+
+<section>
+    <div>
+        <h2>Restons en contact</h2>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <a href="mailto:ludovic.lebris@gmail.com" target="_blank">
+                    <Image src={GmailLogo} alt={'Logo Gmail'} width={64} loading={'lazy'}/>
+                    <p>ludovic.lebris@gmail.com <img src="/new_window_icon.svg" alt="Icône nouvelle fenêtre" style="display: inline"></p>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/ludovic-le-bris/" target="_blank">
+                    <Image src={LinkedinLogo} alt={'Logo Linkedin'} width={64} loading={'lazy'}/>
+                    <p>LinkedIn <img src="/new_window_icon.svg" alt="Icône nouvelle fenêtre" style="display: inline"></p>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/LudovicLeBris" target="_blank">
+                    <Image src={GithubLogo} alt={'Logo Github'} width={64} loading={'lazy'}/>
+                    <p>Github <img src="/new_window_icon.svg" alt="Icône nouvelle fenêtre" style="display: inline"></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
