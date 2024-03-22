@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import Portrait from "../assets/images/20231007_131108.jpg";
+---
+
+<section>
+    <h2>&Agrave; propos de moi</h2>
+    <div>
+        <Image
+            src={Portrait}
+            alt={"Portrait de Ludovic Le Bris"}
+            width={128}
+            loading={"lazy"}
+        />
+    </div>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos error
+            debitis sit voluptatem, ipsam beatae illo repudiandae.
+            Necessitatibus consequatur, cumque quasi, fugiat doloremque id ab,
+            doloribus inventore accusamus consectetur magni?
+        </p>
+    </div>
+</section>
