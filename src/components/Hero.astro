@@ -1,20 +1,27 @@
 ---
 import Image from "astro/components/Image.astro"
-import Portrait from "../assets/images/20231007_131108.jpg";
+import Portrait from "../assets/images/Portrait.jpg";
 ---
 
-<section id="hero">
-    <div>
-        <h1>Ludovic Le Bris.</h1>
-        <h2>D&eacute;veloppeur web</h2>
-        <p>Pr&egrave;t &agrave; relever de nouveaux défis - D&eacute;veloppez votre activit&eacute; web avec un d&eacute;veloppeur passion&eacute;.</p>
-    </div>
-    <div>
-        <a href="#contact">
-            Prenons contact
+<section id="hero" class="flex flex-col md:flex-row items-center gap-2 p-8">
+    <div class="flex flex-col gap-1">
+        <h1 class="text-7xl md:text-8xl font-extrabold">Ludovic<br>Le Bris.</h1>
+        <h2 class="text-3xl md:text-4xl font-bold">D&eacute;veloppeur web</h2>
+        <p class="text-lg w-3/4">Pr&egrave;t &agrave; relever de nouveaux défis - D&eacute;veloppez votre activit&eacute; web avec un d&eacute;veloppeur passion&eacute;.</p>
+        <a href="#contact" class="text-center self-center">
+            <div class="bg-primary-light text-white px-6 py-2 text-center rounded-md">
+                Prenons contact
+            </div>
         </a>
     </div>
-    <div>
-        <Image src={Portrait} alt={'Portait de moi'} width={64} loading={"eager"}/>
+    <div class="size-1/2">
+        <Image
+            src={Portrait}
+            alt={'Portait de moi'}
+            widths={[240, 540, 720]}
+            sizes={"(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px"}
+            loading={"eager"}
+            class={'rounded-full'}
+        />
     </div>
 </section>
