@@ -15,7 +15,7 @@ const transversalSkills = await getCollection('transversalskills')
                 hardSkills.map((hardSkill) => (
                     <>
                     <div>
-                        <Image src={hardSkill.data.logo}` alt={hardSkill.data.alt} width={64}/>
+                        <Image src={hardSkill.data.logo}` alt={hardSkill.data.alt} width={64} loading={"eager"}/>
                         <p>{hardSkill.data.name}</p>
                     </div>
                     </>

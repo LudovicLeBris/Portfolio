@@ -2,16 +2,16 @@
     {
         "name": "Gestion de la marque",
         "logo": "./branding.jpg",
-        "alt": "Image conceptuelle représentant la gestion de marque"
+        "alt": "Représentation conceptuelle la gestion de marque"
     },
     {
         "name": "marketing digital",
         "logo": "./digital.jpg",
-        "alt": "Image conceptuelle représentant le marketing digital"
+        "alt": "Représentation conceptuelle le marketing digital"
     },
     {
         "name": "Stratégie marketing",
         "logo": "./strategy.jpg",
-        "alt": "Image conceptuelle représentant la stratégie marketing"
+        "alt": "Représentation conceptuelle la stratégie marketing"
     }
 ]
