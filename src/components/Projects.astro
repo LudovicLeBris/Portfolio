@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content"
+import ProjectCard from '@components/ui/ProjectCard.astro'
+
+type Projects = {
+    id: string,
+    collection: string,
+    data: {
+        title: string,
+        description: string,
+        image: ImageMetadata,
+        alt: string,
+        url: string,
+        tags: string[]
+    }
+}[]
+
+const projects: Projects = await getCollection('projects')
+---
+
+<section>
+    <div>
+        <h2>Mes projets</h2>
+    </div>
+    <div>
+        {
+            projects.map((project) => (
+                <ProjectCard
+                    title={project.data.title}
+                    description={project.data.description}
+                    image={project.data.image}
+                    alt={project.data.alt}
+                    url={project.data.url}
+                    tags={project.data.tags}
+                />
+            ))
+        }
+    </div>
+</section>

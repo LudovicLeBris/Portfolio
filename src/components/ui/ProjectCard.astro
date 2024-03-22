@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets"
+
+interface CardProps {
+    title: string,
+    description: string,
+    image: ImageMetadata,
+    alt: string,
+    url: string,
+    tags: string[]
+}
+
+const {title, description, image, alt, url, tags} = Astro.props as CardProps
+---
+
+<div>
+    <article>
+        <a href={url}>
+            <div>
+                <Image src={image} alt={alt} width={128}/>
+            </div>
+            <div>
+                <h4>{title}</h4>
+                <p>{description}</p>
+                <ul>
+                {
+                    tags.map((tag) => (
+                        <li>{tag}</li>
+                    ))
+                }
+                </ul>
+            </div>
+        </a>
+    </article>
+</div>
