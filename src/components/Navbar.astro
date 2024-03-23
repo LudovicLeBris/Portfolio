@@ -26,42 +26,40 @@ const menuItems = [
 ]
 ---
 
-<header id='home'>
+<div>
+    <div>
+        <Image src={logo} alt="Logo Ludovic Le Bris" width={64} loading={'eager'} />
+    </div>
     <div>
         <div>
-            <Image src={logo} alt="Logo Ludovic Le Bris" width={64} loading={'eager'} />
+            <svg 
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-8 h-8">
+                <path 
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+            </svg>
         </div>
-        <div>
-            <div>
-                <svg 
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-8 h-8">
-                    <path 
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                    />
-                </svg>
-            </div>
-            <nav>
-                <ul>
-                    {
-                        menuItems.map((item) => (
-                            <>
-                                <li>
-                                    <a href={item.path}>
-                                        {item.title}
-                                    </a>
-                                </li>
-                            </>
-                        ))
-                    }
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                {
+                    menuItems.map((item) => (
+                        <>
+                            <li>
+                                <a href={item.path}>
+                                    {item.title}
+                                </a>
+                            </li>
+                        </>
+                    ))
+                }
+            </ul>
+        </nav>
     </div>
-</header>
+</div>
