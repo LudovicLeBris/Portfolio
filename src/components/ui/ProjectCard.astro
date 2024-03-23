@@ -14,18 +14,18 @@ const {title, description, image, alt, url, tags} = Astro.props as CardProps
 ---
 
 <div>
-    <article>
+    <article class="p-2 flex flex-col items-center">
         <a href={url}>
-            <div>
-                <Image src={image} alt={alt} width={128}/>
+            <div class="flex justify-center">
+                <Image src={image} alt={alt} width={256}/>
             </div>
-            <div>
-                <h4>{title}</h4>
-                <p>{description}</p>
-                <ul>
+            <div class="flex flex-col items-center">
+                <h4 class="text-xl md:text-2xl font-semibold text-center py-2">{title}</h4>
+                <p class="py-2 text-center">{description}</p>
+                <ul class="flex gap-2 bg-primary-dark w-fit px-6 py-1 rounded">
                 {
                     tags.map((tag) => (
-                        <li>{tag}</li>
+                        <li class="bg-primary-light px-2 text-white rounded">#{tag}</li>
                     ))
                 }
                 </ul>
