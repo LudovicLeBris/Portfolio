@@ -18,11 +18,11 @@ type Projects = {
 const projects: Projects = await getCollection('projects')
 ---
 
-<section>
+<section id="projects">
     <div>
-        <h2>Mes projets</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center py-1">Mes projets</h2>
     </div>
-    <div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {
             projects.map((project) => (
                 <ProjectCard
