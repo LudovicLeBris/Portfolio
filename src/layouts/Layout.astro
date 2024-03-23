@@ -1,5 +1,6 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import Hero from '@components/Hero.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -24,7 +25,10 @@ const { title = 'Ludovic Le Bris | Développeur web' } = Astro.props as LayoutPr
 		<title>{title}</title>
 	</head>
 	<body>
-		<Navbar />
+		<header class="h-svh">
+			<Navbar />
+			<Hero />
+		</header>
 		<slot />
 		<Footer />
 	</body>
