@@ -5,26 +5,24 @@ import LinkedinLogo from '@assets/logos/linkedin.png'
 import GithubLogo from '@assets/logos/github.png'
 ---
 
-<section>
-    <div>
-        <h2>Restons en contact</h2>
-    </div>
-    <div>
-        <ul>
+<section id="contact" class="flex flex-col items-center gap-2">
+    <h2 class="text-3xl md:text-4xl font-bold text-center py-1">Restons en contact</h2>
+    <div class="w-full">
+        <ul class="flex flex-col md:flex-row md:justify-evenly md:gap-0 gap-3 items-center">
             <li>
-                <a href="mailto:ludovic.lebris@gmail.com" target="_blank">
+                <a href="mailto:ludovic.lebris@gmail.com" target="_blank" class="flex flex-col items-center">
                     <Image src={GmailLogo} alt={'Logo Gmail'} width={64} loading={'lazy'}/>
                     <p>ludovic.lebris@gmail.com <img src="/new_window_icon.svg" alt="Icône nouvelle fenêtre" style="display: inline"></p>
                 </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/ludovic-le-bris/" target="_blank">
+                <a href="https://www.linkedin.com/in/ludovic-le-bris/" target="_blank" class="flex flex-col items-center">
                     <Image src={LinkedinLogo} alt={'Logo Linkedin'} width={64} loading={'lazy'}/>
                     <p>LinkedIn <img src="/new_window_icon.svg" alt="Icône nouvelle fenêtre" style="display: inline"></p>
                 </a>
             </li>
             <li>
-                <a href="https://github.com/LudovicLeBris" target="_blank">
+                <a href="https://github.com/LudovicLeBris" target="_blank" class="flex flex-col items-center">
                     <Image src={GithubLogo} alt={'Logo Github'} width={64} loading={'lazy'}/>
                     <p>Github <img src="/new_window_icon.svg" alt="Icône nouvelle fenêtre" style="display: inline"></p>
                 </a>
