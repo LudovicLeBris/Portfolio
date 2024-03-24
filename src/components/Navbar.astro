@@ -4,10 +4,6 @@ import logo from '../assets/logos/LLB-light.svg'
 
 const menuItems = [
     {
-        title: 'Accueil',
-        path: '#home'
-    },
-    {
         title: 'Compétences',
         path: '#skills'
     },
@@ -26,11 +22,11 @@ const menuItems = [
 ]
 ---
 
-<div>
+<div class="flex justify-between px-8 py-2 md:items-center">
     <div>
         <Image src={logo} alt="Logo Ludovic Le Bris" width={64} loading={'eager'} />
     </div>
-    <div>
+    <div class="relative">
         <div>
             <svg 
                 xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +34,7 @@ const menuItems = [
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-8 h-8">
+                class="w-8 h-8 md:hidden">
                 <path 
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -46,12 +42,12 @@ const menuItems = [
                 />
             </svg>
         </div>
-        <nav>
-            <ul>
+        <nav class="hidden md:block absolute -right-full h-screen z-10 md:z-0 bg-white md:bg-inherit">
+            <ul class="flex flex-col gap-4 p-4 md:flex-row min-w-max md:gap-2 md:p-0">
                 {
                     menuItems.map((item) => (
                         <>
-                            <li>
+                            <li class="px-4 md:px-2 hover:underline decoration-primary-light underline-offset-8">
                                 <a href={item.path}>
                                     {item.title}
                                 </a>
