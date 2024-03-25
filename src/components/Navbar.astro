@@ -1,62 +1,90 @@
 ---
-import Image from "astro/components/Image.astro"
-import logo from '../assets/logos/LLB-light.svg'
+import Image from "astro/components/Image.astro";
+import logo from "../assets/logos/LLB-light.svg";
 
 const menuItems = [
     {
-        title: 'Compétences',
-        path: '#skills'
+        title: "Compétences",
+        path: "#skills",
     },
     {
-        title: 'Projets',
-        path: '#projects'
+        title: "Projets",
+        path: "#projects",
     },
     {
-        title: 'A propos de moi',
-        path: '#aboutMe'
+        title: "A propos de moi",
+        path: "#aboutMe",
     },
     {
-        title: 'Restons en contact',
-        path: '#contact'
+        title: "Restons en contact",
+        path: "#contact",
     },
-]
+];
 ---
 
 <div class="flex justify-between px-8 py-2 lg:items-center">
     <div>
-        <Image src={logo} alt="Logo Ludovic Le Bris" width={64} loading={'eager'} />
+        <Image
+            src={logo}
+            alt="Logo Ludovic Le Bris"
+            width={64}
+            loading={"eager"}
+        />
     </div>
     <div class="relative">
         <div id="menuBurger">
-            <svg 
+            <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-8 h-8 lg:hidden">
-                <path 
+                class="w-8 h-8 lg:hidden"
+            >
+                <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
             </svg>
         </div>
-        <nav class="hidden lg:block absolute -right-full z-10  bg-white lg:bg-inherit">
-            <ul class="flex flex-col gap-4 p-4 lg:flex-row min-w-max lg:gap-2 lg:p-0">
+        <nav
+            class="hidden lg:block absolute -right-full z-10 bg-white lg:bg-inherit"
+        >
+            <ul
+                class="flex flex-col gap-4 p-4 lg:flex-row min-w-max lg:gap-2 lg:p-0 lg:items-center"
+            >
+                <li class="theme-switch px-4 lg:px-2">
+                    <label for="checkbox" class="">
+                        <input id="checkbox" type="checkbox" class="hidden" />
+                        <div class="icon-wrapper size-8 hover:border rounded-full hover:border-primary-light flex justify-center items-center">
+                            <div class="dark-theme-icon hidden" title="Passer en mode clair">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div class="light-theme-icon" title="Passer en mode sombre">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                    <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </label>
+                </li>
                 {
                     menuItems.map((item) => (
                         <>
-                        <li class="px-4 lg:px-2 hover:underline decoration-primary-light underline-offset-8">
-                            <a href={item.path}>
-                                {item.title}
-                                </a>
-                                </li>
-                                </>
-                                ))
-                            }
-                <li class="px-4 lg:px-2 hover:underline decoration-primary-light underline-offset-8">
-                    <a href="/CV_LE_BRIS_Ludovic_2024.pdf" target="_blank">Obtenir mon CV</a>
+                            <li class="px-4 lg:px-2 hover:underline decoration-primary-light underline-offset-8">
+                                <a href={item.path}>{item.title}</a>
+                            </li>
+                        </>
+                    ))
+                }
+                <li
+                    class="px-4 lg:px-2 hover:underline decoration-primary-light underline-offset-8"
+                >
+                    <a href="/CV_LE_BRIS_Ludovic_2024.pdf" target="_blank"
+                        >Obtenir mon CV <img src="/new_window_icon.svg" alt="Icône nouvelle fenêtre" style="display: inline"></a
+                    >
                 </li>
             </ul>
         </nav>
@@ -64,27 +92,54 @@ const menuItems = [
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function ready() {
-        
+    document.addEventListener("DOMContentLoaded", function ready() {
         // menu interaction
-        const menuBurger = document.querySelector('#menuBurger') as HTMLElement;
-        const navElement = document.querySelector('nav') as HTMLElement;
+        const menuBurger = document.querySelector("#menuBurger") as HTMLElement;
+        const navElement = document.querySelector("nav") as HTMLElement;
 
         const toggleNavBar = () => {
-            navElement?.classList.toggle('hidden');
-        }
+            navElement?.classList.toggle("hidden");
+        };
 
-        menuBurger?.addEventListener('click', (event) => {
+        menuBurger?.addEventListener("click", (event) => {
             console.log(event.target);
             toggleNavBar();
-        })
+        });
 
-        document.addEventListener('click', (event: MouseEvent) => {
-            const elementClicked = (event.target as HTMLElement).parentNode
-            if (!menuBurger.contains(elementClicked) && !navElement?.classList.contains('hidden')) {
-                toggleNavBar()
+        document.addEventListener("click", (event: MouseEvent) => {
+            const elementClicked = (event.target as HTMLElement).parentNode;
+            if (
+                !menuBurger.contains(elementClicked) &&
+                !navElement?.classList.contains("hidden")
+            ) {
+                toggleNavBar();
             }
-        })
+        });
 
-    })
+        // switch theme interaction
+        const button = document.querySelector(
+            '.theme-switch input[type="checkbox"]',
+        ) as HTMLInputElement;
+        
+        const switchTheme = () => {
+            document.querySelector('.dark-theme-icon')?.classList.toggle('hidden')
+            document.querySelector('.light-theme-icon')?.classList.toggle('hidden')
+            document.documentElement.classList.toggle("dark");
+            if (document.documentElement.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+            }
+        };
+        
+        if (
+            localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                switchTheme();
+            }
+            
+            button.addEventListener("click", () => {
+                switchTheme();
+        });
+    });
 </script>
