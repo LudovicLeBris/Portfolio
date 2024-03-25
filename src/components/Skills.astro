@@ -7,7 +7,7 @@ const softSkills = await getCollection("softskills");
 const transversalSkills = await getCollection("transversalskills");
 ---
 
-<section id="skills" class="flex flex-col items-center gap-2 p-8">
+<section id="skills" class="flex flex-col items-center gap-2 p-8 bg-bg-light-variant dark:bg-bg-dark-variant dark:text-white">
     <div>
         <h2 class="text-3xl md:text-4xl font-bold text-center py-1">
             Comp&eacute;tences techniques
@@ -41,7 +41,7 @@ const transversalSkills = await getCollection("transversalskills");
                 {
                     softSkills[0].data.map((softSkill) => (
                         <>
-                            <li class="py-1 text-lg font-semibold odd:bg-gradient-to-r from-slate-100 to-slate-100 via-white">
+                            <li class="py-1 text-lg font-semibold odd:bg-gradient-to-r from-slate-100 to-slate-100 via-bg-light-variant dark:from-bg-dark dark:to-bg-dark dark:via-bg-dark-variant">
                                 {softSkill}
                             </li>
                         </>

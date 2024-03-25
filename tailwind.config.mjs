@@ -8,6 +8,8 @@ export default {
 				'primary-light': '#509046',
 				'primary-dark': '#1C5812',
 				'bg-dark': '#0B2107',
+				'bg-light-variant': '#DDF5DA',
+				'bg-dark-variant' : '#435C3F'
 			}
 		},
 	},
