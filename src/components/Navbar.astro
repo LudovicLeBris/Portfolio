@@ -22,7 +22,7 @@ const menuItems = [
 ]
 ---
 
-<div class="flex justify-between px-8 py-2 md:items-center">
+<div class="flex justify-between px-8 py-2 lg:items-center">
     <div>
         <Image src={logo} alt="Logo Ludovic Le Bris" width={64} loading={'eager'} />
     </div>
@@ -34,7 +34,7 @@ const menuItems = [
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-8 h-8 md:hidden">
+                class="w-8 h-8 lg:hidden">
                 <path 
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -42,19 +42,22 @@ const menuItems = [
                 />
             </svg>
         </div>
-        <nav class="hidden md:block absolute -right-full z-10  bg-white md:bg-inherit">
-            <ul class="flex flex-col gap-4 p-4 md:flex-row min-w-max md:gap-2 md:p-0">
+        <nav class="hidden lg:block absolute -right-full z-10  bg-white lg:bg-inherit">
+            <ul class="flex flex-col gap-4 p-4 lg:flex-row min-w-max lg:gap-2 lg:p-0">
                 {
                     menuItems.map((item) => (
                         <>
-                            <li class="px-4 md:px-2 hover:underline decoration-primary-light underline-offset-8">
-                                <a href={item.path}>
-                                    {item.title}
+                        <li class="px-4 lg:px-2 hover:underline decoration-primary-light underline-offset-8">
+                            <a href={item.path}>
+                                {item.title}
                                 </a>
-                            </li>
-                        </>
-                    ))
-                }
+                                </li>
+                                </>
+                                ))
+                            }
+                <li class="px-4 lg:px-2 hover:underline decoration-primary-light underline-offset-8">
+                    <a href="/CV_LE_BRIS_Ludovic_2024.pdf" target="_blank">Obtenir mon CV</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -62,6 +65,8 @@ const menuItems = [
 
 <script>
     document.addEventListener('DOMContentLoaded', function ready() {
+        
+        // menu interaction
         const menuBurger = document.querySelector('#menuBurger') as HTMLElement;
         const navElement = document.querySelector('nav') as HTMLElement;
 
@@ -80,7 +85,6 @@ const menuItems = [
                 toggleNavBar()
             }
         })
-
 
     })
 </script>
