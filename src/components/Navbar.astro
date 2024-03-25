@@ -41,42 +41,42 @@ const menuItems = [
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
             </svg>
-            <nav class="hidden md:block absolute -right-full z-10  bg-white md:bg-inherit">
-                <ul class="flex flex-col gap-4 p-4 md:flex-row min-w-max md:gap-2 md:p-0">
-                    {
-                        menuItems.map((item) => (
-                            <>
-                                <li class="px-4 md:px-2 hover:underline decoration-primary-light underline-offset-8">
-                                    <a href={item.path}>
-                                        {item.title}
-                                    </a>
-                                </li>
-                            </>
-                        ))
-                    }
-                </ul>
-            </nav>
         </div>
+        <nav class="hidden md:block absolute -right-full z-10  bg-white md:bg-inherit">
+            <ul class="flex flex-col gap-4 p-4 md:flex-row min-w-max md:gap-2 md:p-0">
+                {
+                    menuItems.map((item) => (
+                        <>
+                            <li class="px-4 md:px-2 hover:underline decoration-primary-light underline-offset-8">
+                                <a href={item.path}>
+                                    {item.title}
+                                </a>
+                            </li>
+                        </>
+                    ))
+                }
+            </ul>
+        </nav>
     </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function ready() {
-        const menuBurger = document.querySelector('#menuBurger') as HTMLDivElement;
-        const navElement = document.querySelector('nav');
+        const menuBurger = document.querySelector('#menuBurger') as HTMLElement;
+        const navElement = document.querySelector('nav') as HTMLElement;
 
         const toggleNavBar = () => {
             navElement?.classList.toggle('hidden');
         }
 
-        menuBurger.addEventListener('click', () => {
+        menuBurger?.addEventListener('click', (event) => {
+            console.log(event.target);
             toggleNavBar();
         })
 
         document.addEventListener('click', (event: MouseEvent) => {
-            const test = (event.target as HTMLElement).parentNode
-            console.log(test);
-            if (test !== menuBurger && !navElement?.classList.contains('hidden')) {
+            const elementClicked = (event.target as HTMLElement).parentNode
+            if (!menuBurger.contains(elementClicked) && !navElement?.classList.contains('hidden')) {
                 toggleNavBar()
             }
         })
