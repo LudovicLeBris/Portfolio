@@ -58,7 +58,7 @@ const menuItems = [
             </svg>
         </div>
         <nav
-            class="hidden lg:block absolute -right-full z-10 bg-primary-dark lg:bg-inherit dark:text-white"
+            class="hidden lg:block absolute -right-full z-10 lg:bg-inherit dark:text-white"
         >
             <ul
                 class="flex flex-col gap-4 p-4 lg:flex-row min-w-max lg:gap-2 lg:p-0 lg:items-center"
@@ -66,7 +66,7 @@ const menuItems = [
                 <li class="theme-switch px-4 lg:px-2">
                     <label for="checkbox" class="">
                         <input id="checkbox" type="checkbox" class="hidden" />
-                        <div class="icon-wrapper size-8 hover:border rounded-full hover:border-primary-light flex justify-center items-center">
+                        <div class="icon-wrapper size-8 hover:border rounded-full hover:border-primary-dark dark:hover:border-primary-light flex justify-center items-center">
                             <div class="dark-theme-icon " title="Passer en mode sombre">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
                                     <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
@@ -83,14 +83,14 @@ const menuItems = [
                 {
                     menuItems.map((item) => (
                         <>
-                            <li class="px-4 lg:px-2 hover:underline decoration-primary-light underline-offset-8">
+                            <li class="px-4 lg:px-2 hover:underline decoration-primary-dark dark:decoration-primary-light underline-offset-8">
                                 <a href={item.path}>{item.title}</a>
                             </li>
                         </>
                     ))
                 }
                 <li
-                    class="px-4 lg:px-2 hover:underline decoration-primary-light underline-offset-8"
+                    class="px-4 lg:px-2 hover:underline decoration-primary-dark dark:decoration-primary-light underline-offset-8"
                 >
                     <a href="/CV_LE_BRIS_Ludovic_2024.pdf" target="_blank"
                         >Obtenir mon CV <NewWindowIcon /></a
