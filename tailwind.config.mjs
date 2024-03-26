@@ -10,6 +10,17 @@ export default {
 				'bg-dark': '#0B2107',
 				'bg-light-variant': '#DDF5DA',
 				'bg-dark-variant' : '#435C3F'
+			},
+			screens: {
+				'landscape': {
+					'raw': '(orientation: landscape)'
+				},
+				'xs': {
+					'raw': 'only screen and (max-height: 710px) and (max-width: 360px)'
+				},
+				'h-xs': {
+					'raw': 'only screen and (max-height: 620px)'
+				}
 			}
 		},
 	},
