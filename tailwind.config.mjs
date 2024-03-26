@@ -12,9 +12,6 @@ export default {
 				'bg-dark-variant' : '#435C3F'
 			},
 			screens: {
-				'landscape': {
-					'raw': '(orientation: landscape)'
-				},
 				'xs': {
 					'raw': 'only screen and (max-height: 710px) and (max-width: 360px)'
 				},
