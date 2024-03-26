@@ -2,6 +2,7 @@
 import Navbar from '../components/Navbar.astro';
 import Hero from '@components/Hero.astro';
 import Footer from '../components/Footer.astro';
+import ToTopButton from '@components/ui/ToTopButton.astro';
 
 interface Props {
 	title: string;
@@ -31,5 +32,6 @@ const { title = 'Ludovic Le Bris | Développeur web' } = Astro.props as LayoutPr
 		</header>
 		<slot />
 		<Footer />
+		<ToTopButton />
 	</body>
 </html>
