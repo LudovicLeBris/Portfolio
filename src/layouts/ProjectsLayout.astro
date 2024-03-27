@@ -1,0 +1,27 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ToTopButton from '@components/ui/ToTopButton.astro';
+
+const {title} = Astro.props
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-white dark:bg-bg-dark">
+		<header class="">
+			<Navbar />
+		</header>
+		<slot />
+		<Footer />
+		<ToTopButton />
+	</body>
+</html>

@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets"
+import ProjectsLayout from "src/layouts/ProjectsLayout.astro"
+
+import { getEntry } from "astro:content"
+import NewWindowIcon from "@components/ui/NewWindowIcon.astro"
+const apdcalculatorProject = await getEntry('projects', 'apdCalculator')
+
+---
+
+<ProjectsLayout title="APD Calculator">
+<section class="flex flex-col items-center gap-4 p-8 dark:text-white">
+    <h1 class="text-5xl md:text-6xl font-bold text-center py-1">APD Calculator</h1>
+    <div class="sm:size-2/3 lg:size-1/2">
+        <!-- Image du projet -->
+        <Image
+            src={apdcalculatorProject.data.image}
+            alt={"A web application window"}
+            class={'rounded-lg'}
+        />
+    </div>
+    <div >
+        <ul class="flex gap-2 bg-primary-dark dark:bg-primary-light w-fit px-6 py-1 rounded">
+            {
+                apdcalculatorProject.data.tags.map((tag) => (
+                    <li class="bg-primary-light dark:bg-primary-dark px-2 text-white rounded">#{tag}</li>
+                ))
+            }
+
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Description</h2>
+        <p>{apdcalculatorProject.data.description}</p>
+    </div>
+    <div class="w-full sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Liens du projet</h2>
+        <p><a href="https://github.com/LudovicLeBris/Air-pressure-drop-calculator" target="_blank">Dépot Github</a> <NewWindowIcon /></p>
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Détail du projet</h2>
+        <p>Premier gros projet mené en autodidacte et précédant ma reconversion professionnelle.</p>
+        <p>&Agrave; l'époque je travail encore dans la ventilation, donc il me parraissait naturel de développer un outil d'aide aux  calculs aérauliques.</p>
+        <p>La notion apprise ici, c'est la création et l'implémentation d'une interface graphique avec la bibliothèque PySide (adaptation de Qt pour Python).</p>
+        <p>J'ai pu aussi faire mes premières armes en programmation orienté objet dans le cadre d'un vrai projet.</p>
+    </div>
+</section>
+
+</ProjectsLayout>

@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets"
+import ProjectsLayout from "src/layouts/ProjectsLayout.astro"
+
+import { getEntry } from "astro:content"
+import NewWindowIcon from "@components/ui/NewWindowIcon.astro"
+const simpleapdcalculatorProject = await getEntry('projects', 'simpleapdcalculator')
+
+---
+
+<ProjectsLayout title="simple APD Calculator">
+<section class="flex flex-col items-center gap-4 p-8 dark:text-white">
+    <h1 class="text-5xl md:text-6xl font-bold text-center py-1">Simple APD Calculator</h1>
+    <div class="sm:size-2/3 lg:size-1/2">
+        <!-- Image du projet -->
+        <Image
+            src={simpleapdcalculatorProject.data.image}
+            alt={"A web application window"}
+            class={'rounded-lg'}
+        />
+    </div>
+    <div >
+        <ul class="flex gap-2 bg-primary-dark dark:bg-primary-light w-fit px-6 py-1 rounded">
+            {
+                simpleapdcalculatorProject.data.tags.map((tag) => (
+                    <li class="bg-primary-light dark:bg-primary-dark px-2 text-white rounded">#{tag}</li>
+                ))
+            }
+
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Description</h2>
+        <p>{simpleapdcalculatorProject.data.description}</p>
+    </div>
+    <div class="w-full sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Liens du projet</h2>
+        <p><a href="https://github.com/LudovicLeBris/Air-pressure-drop-calculator" target="_blank">Dépot Github</a> <NewWindowIcon /></p>
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Détail du projet</h2>
+        <p>Petit projet mené en autodidacte et précédant ma reconversion professionnelle.</p>
+        <p>Il s'agit d'une version simplifiée du projet <a href="/projets/apdcalculator">APD Calculator</a> plus facile d'utilisation et permettant un déploiement rapide car entièrement statique.</p>
+        <p>Le projet m'a permit d'appliquer les base du développement web avec HTML5, CSS et Javascript.</p>
+        <p>Petit particularité, il s'agit d'une application PWA (Progessive Web App) permettant l'installation sur tous les appareils modernes comme une application native.</p>
+    </div>
+</section>
+
+</ProjectsLayout>
