@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import Portrait from "../assets/images/20231007_131108.jpg";
+---
+
+<section id="aboutMe" class="flex flex-col items-center gap-2 p-8 bg-bg-light-variant dark:bg-bg-dark-variant dark:text-white">
+    <h2 class="text-3xl md:text-4xl font-bold text-center py-1">&Agrave; propos de moi</h2>
+    <div class="flex flex-col lg:flex-row-reverse items-center justify-center gap-2">
+        <div class="flex justify-center size-1/2 lg:size-1/3">
+            <Image
+                src={Portrait}
+                alt={"Portrait de Ludovic Le Bris"}
+                width={256}
+                loading={"lazy"}
+            />
+        </div>
+        <div class="lg:w-1/2 px-4">
+            <q class="block text-xl m-4 italic font-semibold leading-relaxed">Jour après jour, marche après marche, je regarde devant avec optimisme et derrière avec humilité.</q>
+            <p class="py-1">Salut, moi c'est Ludovic. &eacute;ternel curieux, touche à tout et autodidacte, j'aime apprendre de nouvelles choses tous les jours.</p>
+            <p class="py-1">En tant que technicien, j'adore décourvrir de nouveaux outils, mais j'ai découvert que j'adorais encore plus en créer pour faciliter le travail des autres.</p>
+            <p class="py-1">L'informatique à longtemps été pour moi un hobby, puis une passion et maintenant j'en ai fait mon métier.</p>
+            <p class="py-1">Si mon profil vous a plu, n'hésitez pas à prendre contact avec moi avec les liens ci-dessous.</p>
+        </div>
+    </div>
+</section>

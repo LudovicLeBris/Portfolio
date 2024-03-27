@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets"
+import ProjectsLayout from "src/layouts/ProjectsLayout.astro"
+
+import { getEntry } from "astro:content"
+import NewWindowIcon from "@components/ui/NewWindowIcon.astro"
+const apdapiProject = await getEntry('projects', 'apdapi')
+
+---
+
+<ProjectsLayout title="APD-API">
+<section class="flex flex-col items-center gap-4 p-8 dark:text-white">
+    <h1 class="text-5xl md:text-6xl font-bold text-center py-1">APD-API</h1>
+    <div class="sm:size-2/3 lg:size-1/2">
+        <!-- Image du projet -->
+        <Image
+            src={apdapiProject.data.image}
+            alt={"A web application window"}
+            class={'rounded-lg'}
+        />
+    </div>
+    <div>
+        <ul class="flex gap-2 bg-primary-dark dark:bg-primary-light w-fit px-6 py-1 rounded">
+            {
+                apdapiProject.data.tags.map((tag) => (
+                    <li class="bg-primary-light dark:bg-primary-dark px-2 text-white rounded">#{tag}</li>
+                ))
+            }
+
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Description</h2>
+        <p>{apdapiProject.data.description}</p>
+    </div>
+    <div class="w-full sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Liens du projet</h2>
+        <p><a href="https://aeraulic.com" target="_blank">Site : aeraulic.com</a> <NewWindowIcon /></p>
+        <p><a href="https://github.com/LudovicLeBris/APD-API" target="_blank">Dépot Github</a> <NewWindowIcon /></p>
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Détail du projet</h2>
+        <p>L'objectif de ce projet est de reprendre le projet <a href="/projets/apdcalculator">Air-pressure-drop-calculator</a> développé en Python et d'en faire une API.</p>
+        <p>Il s'agit de mon premier gros projet post formation de développeur web.</p>
+        <p>L'idée m'est vite venue d'ajouter des fonctionnalités de gestion de compte et surtout de gestion de projet, pour que l'utilisateur puisse classer ses chantiers, puis ses réseaux de gaines.</p>
+        <p>Comme à chaque projet, j'essaye d'y appliquer une nouvelle notion de programmation. Ici, j'ai voulu apprendre le "DDD" (Domain Driven Development) et appliquer une architecture logiciel appelée "Clean architecture".</p>
+        <p>J'ai aussi pu expérimenter mes premiers tests unitaires et ma première rédaction de documentation API OpenAPI (V3).</p>
+        <br>
+        <p>Ce projet utilise le framework Symfony en version 6.4 (LTS).</p>
+        <p>Au départ la base de donnée utilisait Mysql, mais pour des raisons économiques, je l'ai basculé sur du SqLite.</p>
+        <p>L'authentification de l'API est sécurisée avec système de jeton Web JSON (JWT).'</p>
+        <br>
+        <p>L'API est déployée sur un PaaS (Platform as a service) de type Jelastic Cloud. Tous les modules sont containeurisés, permettant une "scalabilité" très fine des services.</p>
+    </div>
+</section>
+
+</ProjectsLayout>

@@ -1,18 +1,9 @@
 ---
 import Navbar from '../components/Navbar.astro';
-import Hero from '@components/Hero.astro';
 import Footer from '../components/Footer.astro';
 import ToTopButton from '@components/ui/ToTopButton.astro';
 
-interface Props {
-	title: string;
-}
-
-export interface LayoutProps {
-	title: string
-}
-
-const { title = 'Ludovic Le Bris | Développeur web' } = Astro.props as LayoutProps;
+const {title} = Astro.props
 ---
 
 <!doctype html>
@@ -26,9 +17,8 @@ const { title = 'Ludovic Le Bris | Développeur web' } = Astro.props as LayoutPr
 		<title>{title}</title>
 	</head>
 	<body class="bg-white dark:bg-bg-dark">
-		<header class="h-screen h-xs:h-fit xs:h-fit flex flex-col">
+		<header class="">
 			<Navbar />
-			<Hero />
 		</header>
 		<slot />
 		<Footer />

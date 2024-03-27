@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Gestion de la marque",
+        "logo": "./branding.jpg",
+        "alt": "Représentation conceptuelle la gestion de marque"
+    },
+    {
+        "name": "Marketing digital",
+        "logo": "./digital.jpg",
+        "alt": "Représentation conceptuelle le marketing digital"
+    },
+    {
+        "name": "Stratégie marketing",
+        "logo": "./strategy.jpg",
+        "alt": "Représentation conceptuelle la stratégie marketing"
+    }
+]

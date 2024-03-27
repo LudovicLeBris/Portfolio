@@ -1,0 +1,36 @@
+---
+
+---
+
+<div id="toTop" class=" hidden fixed bottom-0 right-0 m-6">
+    <div class=" rounded-full bg-primary-dark dark:bg-primary-light size-12 flex justify-center items-center opacity-50 hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+        </svg>
+    </div>
+</div>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function ready() {
+        const toTopButton = document.querySelector('#toTop') as HTMLDivElement;
+
+        window.onscroll = () => {scrollFunction()}
+
+        const scrollFunction = () => {
+            if (document.body.scrollTop > 240 || document.documentElement.scrollTop > 120) {
+                toTopButton.style.display = "block";
+            } else {
+                toTopButton.style.display = "hidden";
+            }
+        }
+
+        const scrollToTop = () => {
+            window.scrollTo(0, 0)
+        }
+
+        toTopButton.addEventListener('click', () => {
+            scrollToTop()
+        })
+    })
+</script>
