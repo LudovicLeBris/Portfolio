@@ -3,6 +3,6 @@
     "description": "Application web permettant le calcul de pertes de charges aérauliques à partir de 2 valeurs.",
     "image": "./simpleapdcalculator.png",
     "alt": "Une fenêtre d'application web",
-    "url": "/projets/simpleapdcalculator",
+    "url": "/Portfolio/projets/simpleapdcalculator",
     "tags": ["Javascript", "Html", "Css", "PWA"]
 }

@@ -3,6 +3,6 @@
     "description": "Application de bureau permettant le calcul de pertes de charges aérauliques dans un tronçon de gaine.",
     "image": "./apdcalculator.png",
     "alt": "Une fenêtre d'application de bureau",
-    "url": "/projets/apdcalculator",
+    "url": "/Portfolio/projets/apdcalculator",
     "tags": ["Python", "PySide"]
 }
