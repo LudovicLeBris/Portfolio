@@ -7,11 +7,11 @@ import NewWindowIcon from "./ui/NewWindowIcon.astro";
 const menuItems = [
     {
         title: "Accueil",
-        path: "/",
+        path: "/Portfolio/",
     },
     {
         title: "Projets",
-        path: "/#projects",
+        path: "/Portfolio/#projects",
     },
     {
         title: "Compétences",
@@ -19,18 +19,18 @@ const menuItems = [
     },
     {
         title: "A propos de moi",
-        path: "/#aboutMe",
+        path: "/Portfolio/#aboutMe",
     },
     {
         title: "Restons en contact",
-        path: "/#contact",
+        path: "/Portfolio/#contact",
     },
 ];
 ---
 
 <div class="flex justify-between px-8 py-4 lg:items-center">
     <div>
-        <a href="/">
+        <a href="/Portfolio/">
             <Image
                 src={logoLight}
                 alt="Logo Ludovic Le Bris"
@@ -98,7 +98,7 @@ const menuItems = [
                 <li
                     class="px-4 lg:px-2 hover:underline decoration-primary-dark dark:decoration-primary-light underline-offset-8"
                 >
-                    <a href="/CV_LE_BRIS_Ludovic_2024.pdf" target="_blank"
+                    <a href="/Portfolio/CV_LE_BRIS_Ludovic_2024.pdf" target="_blank"
                         >Obtenir mon CV <NewWindowIcon /></a
                     >
                 </li>
