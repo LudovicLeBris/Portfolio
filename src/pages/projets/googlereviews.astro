@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets"
+import ProjectsLayout from "src/layouts/ProjectsLayout.astro"
+
+import { getEntry } from "astro:content"
+import NewWindowIcon from "@components/ui/NewWindowIcon.astro"
+const googlereviewsProject = await getEntry('projects', 'googlereviews')
+
+---
+
+<ProjectsLayout title="APD Calculator">
+<section class="flex flex-col items-center gap-4 p-8 dark:text-white">
+    <h1 class="text-5xl md:text-6xl font-bold text-center py-1">Google reviews</h1>
+    <div class="sm:size-2/3 lg:size-1/2">
+        <!-- Image du projet -->
+        <Image
+            src={googlereviewsProject.data.image}
+            alt={"A web application window"}
+            class={'rounded-lg'}
+        />
+    </div>
+    <div >
+        <ul class="flex gap-2 bg-primary-dark dark:bg-primary-light w-fit px-6 py-1 rounded">
+            {
+                googlereviewsProject.data.tags.map((tag) => (
+                    <li class="bg-primary-light dark:bg-primary-dark px-2 text-white rounded">#{tag}</li>
+                ))
+            }
+
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Description</h2>
+        <p>{googlereviewsProject.data.description}</p>
+    </div>
+    <div class="w-full sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Liens du projet</h2>
+        <p><a href="https://github.com/LudovicLeBris/GoogleReviewsBackend" target="_blank">Dépot Github backend</a> <NewWindowIcon /></p>
+        <p><a href="https://github.com/LudovicLeBris/GoogleReviewsFrontend" target="_blank">Dépot Github frontend</a> <NewWindowIcon /></p>
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Détail du projet</h2>
+        <p>Petit projet partant pour un besoin précis de récupération d'avis Google pour une intégration sur un site nocode (Jimdo)</p>
+        <p>En faisant mes recherches d'un outil existant pour intégrer des avis Google sur un site, je suis tombé sur un tas de plateformes proposant ce service. Ce que je voulais faire c'était une petite intégration pour le site d'un ami qui n'avait pas les moyens de se payer un abonnement pour si peu.</p>
+        <p>J'ai donc cherché des codes sources sur Github. J'en ai trouvé. Ca m'a mis sur la piste de la bonne API (Google Place API). J'ai décortiqué la doc et je me suis mis en tête de reproduire le même résultat à moindre frais.</p>
+        <br>
+        <p>Le projet est donc composé d'un backend, qui récupère et stock les données de l'API et d'un frontend qui affiche et récupère les données du backend.</p>
+        <p>Mais pourquoi ce système de backend ? Pourquoi ne pas récupérer les données directement de l'API Google depuis le frontend ?</p>
+        <p>Il y a 2 raisons :</p>
+        <ul class="list-disc list-inside indent-4">
+            <li>Pour récupérer les données, il aurait fallu exposer en clair la clé d'API Google lié au compte.</li>
+            <li>A chaque requète sur le site, on fait une requète à l'API. Et ces requètes sont plutôt onéreuses à la longue 💵.</li>
+        </ul>
+        <p>Donc le backend permet de :</p>
+        <ul class="list-disc list-inside indent-4">
+            <li>Mettre à l'abri les données sensibles tel que la clé API</li>
+            <li>Pouvoir régler la fréquence de récupération des données et économisé de l'argent.</li>
+        </ul>
+        <br>
+        <p>Le backend est hébergé sur le cloud de Google grâce à l'offre "always free". Cela permet d'avoir un service gratuit si tant est que le site concerné n'a pas plusieurs millers de visites par heures.</p>
+        <p>Les données sont stockés en NoSql sur une offre gratuite de Google : Firebase.</p>
+    </div>
+</section>
+
+</ProjectsLayout>
