@@ -3,6 +3,6 @@
     "description": "Intégration web permettant d'afficher et de récupérer les avis Google d'une société référencé depuis un backend dédié.",
     "image": "./googlereviews.png",
     "alt": "Une fenêtre d'application web",
-    "url": "/projets/googlereviews",
+    "url": "/Portfolio/projets/googlereviews",
     "tags": ["Javascript", "NoSql", "GoogleCloud"]
 }
