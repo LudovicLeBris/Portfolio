@@ -20,7 +20,7 @@ const projects: Projects = await getCollection('projects')
 
 <section id="projects" class="flex flex-col items-center gap-2 p-8 bg-bg-light-variant dark:bg-bg-dark-variant dark:text-white">
     <h2 class="text-3xl md:text-4xl font-bold text-center py-1">Mes projets</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-baseline gap-4 p-1">
         {
             projects.map((project) => (
                 <ProjectCard

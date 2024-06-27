@@ -1,0 +1,8 @@
+{
+    "title": "Duct Calculator",
+    "description": "Web application permettant le dimensionnement d'une gaine et le calcul de pertes de charges aérauliques dans un tronçons de gaine.",
+    "image": "./ductcalculator.png",
+    "alt": "Une fenêtre d'application de bureau",
+    "url": "/projets/ductcalculator",
+    "tags": ["Angular", "MaterialUI"]
+}
