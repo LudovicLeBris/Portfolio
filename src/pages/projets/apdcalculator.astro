@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets"
 import ProjectsLayout from "src/layouts/ProjectsLayout.astro"
+import DesignSystem from "../../assets/images/apdcalculator_designsystem.png"
 
 import { getEntry } from "astro:content"
 import NewWindowIcon from "@components/ui/NewWindowIcon.astro"
@@ -34,14 +35,50 @@ const apdcalculatorProject = await getEntry('projects', 'apdCalculator')
     </div>
     <div class="w-full sm:w-2/3 lg:w-1/2">
         <h2 class="text-lg font-bold border-b mb-2">Liens du projet</h2>
-        <p><a href="https://github.com/LudovicLeBris/Air-pressure-drop-calculator" target="_blank">Dépot Github</a> <NewWindowIcon /></p>
+        <p><a href="https://github.com/LudovicLeBris/APD-calculator" target="_blank">Dépot Github projet frontend</a> <NewWindowIcon /></p>
+        <p><a href="https://github.com/LudovicLeBris/APD-API" target="_blank">Dépot Github projet backend</a> <NewWindowIcon /></p>
     </div>
     <div class="sm:w-2/3 lg:w-1/2">
         <h2 class="text-lg font-bold border-b mb-2">Détail du projet</h2>
-        <p>Premier gros projet mené en autodidacte et précédant ma reconversion professionnelle.</p>
-        <p>&Agrave; l'époque je travail encore dans la ventilation, donc il me parraissait naturel de développer un outil d'aide aux  calculs aérauliques.</p>
-        <p>La notion apprise ici, c'est la création et l'implémentation d'une interface graphique avec la bibliothèque PySide (adaptation de Qt pour Python).</p>
-        <p>J'ai pu aussi faire mes premières armes en programmation orienté objet dans le cadre d'un vrai projet.</p>
+        <p>Premier gros projet fullstack post titre professionnel.</p>
+        <p>Il reprend un projet Python mené en autodidacte au début de ma résolution de me reconvertir.</p>
+        <p>Ce projet est composé d'un frontend Angular 17 et d'un backend Symfony prenant la forme d'une API restful.</p>
+        <div class="ml-4">
+            <h3 class="text-md font-bold border-b mb-2">Projet frontend</h3>
+            <p>Cette partie du projet à été réalisée après la partie backend.</p>
+            <p>J'ai voulu avant de commence à coder, mettre en place une maquette afin de guider le développement du mieux possible.</p>
+            <p>C'est pourquoi, j'ai commencé à concevoir un design system avec un réflexion sur les couleurs, les typographies et les principaux composants de l'application.</p>
+            <Image
+                src={DesignSystem}
+                alt={"A web application window"}
+                class:list={'rounded-lg'}
+                densities={[0.5, 1]}
+            />
+            <p>Puis j'ai décider d'utiliser Angular pour construire le frontend. J'ai du apprendre les rudiments de TypeScript pour commencer à utiliser ce framework.</p>
+            <p>Le résultat final est à la hauteur de mes attentes.</p>
+            <p>Avec ce projet j'ai pu apprendre :</p>
+            <ul class="list-disc list-inside ml-4 my-2">
+                <li>Le superset Typescript</li>
+                <li>Les bases de la programmation réactive (avec Rxjs) pour traiter les données du backend.</li>
+                <li>les formulaires réactifs, pour une saisie plus ergonomique pour l'utilisateur.</li>
+                <li>Les bases de la conception UI sur Figma.</li>
+                <li>Continuer la maîtrise de Tailwind CSS</li>
+            </ul>
+        </div>
+        <div class="ml-4">
+            <h3 class="text-md font-bold border-b mb-2">Projet backend</h3>
+            <p>Ce projet est architecturé sous la forme d'une API Restful avc le framework Symfony.</p>
+            <p>J'ai sciemment voulu construire l'architecture sans librairie externe de type APIPlatform.</p>
+            <p>En effet je voulais tester le développement d'un projet de type clean architecture.</p>
+            <p>Je me suis efforcé d'intégrer à cette API toutes les bonnes pratiques :</p>
+            <ul class="list-disc list-inside ml-4 my-2">
+                <li>Réponses cohérentes avec systématiquement un statut http</li>
+                <li>Sécurité grâce au token JWT</li>
+                <li>Gestion des erreurs de requêtes</li>
+                <li>Documentation suivant la norme OpenApi</li>
+            </ul>
+            <p>J'ai expérimenté aussi pour la premère fois la rédaction de tests unitaires sur tous les "uses case" de mes domaines.</p>
+        </div>
     </div>
 </section>
 

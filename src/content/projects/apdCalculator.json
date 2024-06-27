@@ -1,8 +1,8 @@
 {
     "title": "APD Calculator",
-    "description": "Application de bureau permettant le calcul de pertes de charges aérauliques dans un tronçon de gaine.",
+    "description": "Web application permettant le calcul de pertes de charges aérauliques dans des réseaux de gaine.",
     "image": "./apdcalculator.png",
     "alt": "Une fenêtre d'application de bureau",
     "url": "/projets/apdcalculator",
-    "tags": ["Python", "PySide"]
+    "tags": ["Angular", "Tailwind", "Symfony", "API"]
 }

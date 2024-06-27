@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets"
+import ProjectsLayout from "src/layouts/ProjectsLayout.astro"
+
+import { getEntry } from "astro:content"
+import NewWindowIcon from "@components/ui/NewWindowIcon.astro"
+const ductcalculatorProject = await getEntry('projects', 'ductCalculator')
+---
+
+<ProjectsLayout title="Duct Calculator">
+<section class="flex flex-col items-center gap-4 p-8 dark:text-white">
+    <h1 class="text-5xl md:text-6xl font-bold text-center py-1">Duct Calculator</h1>
+    <div class="sm:size-2/3 lg:size-1/2">
+        <!-- Image du projet -->
+        <Image
+            src={ductcalculatorProject.data.image}
+            alt={"A web application window"}
+            class={'rounded-lg'}
+        />
+    </div>
+    <div >
+        <ul class="flex gap-2 bg-primary-dark dark:bg-primary-light w-fit px-6 py-1 rounded">
+            {
+                ductcalculatorProject.data.tags.map((tag) => (
+                    <li class="bg-primary-light dark:bg-primary-dark px-2 text-white rounded">#{tag}</li>
+                ))
+            }
+
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Description</h2>
+        <p>{ductcalculatorProject.data.description}</p>
+    </div>
+    <div class="w-full sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Liens du projet</h2>
+        <p><a href="https://ductcalculator.onrender.com/" target="_blank">Application (hébergement temporaire)</a> <NewWindowIcon /></p>
+        <p><a href="https://github.com/LudovicLeBris/DuctCalculator" target="_blank">Dépot Github</a> <NewWindowIcon /></p>
+    </div>
+    <div class="sm:w-2/3 lg:w-1/2">
+        <h2 class="text-lg font-bold border-b mb-2">Détail du projet</h2>
+        <p>A la suite du projet <a class="underline" href="/projets/apdcalculator">Apd Calculator</a>, il se trouve que ce dernier n'a pas plu aux utilisateurs concerné.</p>
+        <p>Le fait étant que j'avais négligé une dimension importante : l'UX.</p>
+        <p>C'est pourquoi j'ai recommencé avec un projet complétement frontend, en me servant de librairies UI existantes pour accélerer le développement.</p>
+        <p>J'ai choisi Material UI car cette librairies à un lien très fort avec Angular.</p>
+        <p>Je me suis inspiré d'une application existante sur le marché en améliorant légèrement l'UX et en ajoutant la fonctionnalité calcul de pertes de charges.</p>
+        <p>J'ai recueilli les avis utilisateurs tout au long du développement et les retours sont encourageants.</p>
+        <p>J'ai mis en place pour la 1ère fois un gestion de versions car je pense que cet outil va être amené à évolué au cours du temps.</p>
+    </div>
+</section>
+    
+</ProjectsLayout>
