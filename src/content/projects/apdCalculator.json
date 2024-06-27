@@ -3,6 +3,11 @@
     "description": "Web application permettant le calcul de pertes de charges aérauliques dans des réseaux de gaine.",
     "image": "./apdcalculator.png",
     "alt": "Une fenêtre d'application de bureau",
+<<<<<<< HEAD
     "url": "/projets/apdcalculator",
     "tags": ["Angular", "Tailwind", "Symfony", "API"]
+=======
+    "url": "/Portfolio/projets/apdcalculator",
+    "tags": ["Python", "PySide"]
+>>>>>>> fa20e85c73f486e95db6e71669b5e7456c72d402
 }
