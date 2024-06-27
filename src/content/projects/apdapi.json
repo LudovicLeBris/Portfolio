@@ -1,8 +1,0 @@
-{
-    "title": "APD API",
-    "description": "API web permettant le calcul de pertes de charges aérauliques dans un réseau de gaine.",
-    "image": "./apdapi.png",
-    "alt": "Une fenêtre d'application de bureau",
-    "url": "/Portfolio/projets/apdapi",
-    "tags": ["PHP", "Symfony", "Restful"]
-}
